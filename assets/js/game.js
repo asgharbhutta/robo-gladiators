@@ -108,7 +108,7 @@ var endGame = function(){
     startGame();
   }
   else {
-    window.alert("Thanks for playing Robot Gladiators! - Later!");
+    window.alert("Thanks for playing Robot Gladiators! - Later gator!");
   }
 };
 

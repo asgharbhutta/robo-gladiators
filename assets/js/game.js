@@ -80,6 +80,11 @@ var startGame = function(){
       var pickedEnemyName = enemyNames[i];
       enemyHealth = 30;
       fight(pickedEnemyName);
+
+      //if we're not at the last enemy in the array
+      if(playerHealth > 0 && i < enemyNames.length - 1){
+        shop();
+      }
     }else{
       window.alert("You have lost your robot in battle! GAME OVER!")
       break;
@@ -110,6 +115,10 @@ var endGame = function(){
   else {
     window.alert("Thanks for playing Robot Gladiators! - Later gator!");
   }
+};
+
+var shop = function(){
+  console.log("Entered the shop");
 };
 
 // start the game when the page loads

@@ -145,6 +145,24 @@ var startGame = function () {
 
 //function to end the entire game
 var endGame = function () {
+  window.alert("Game has ended, lets see how you did");
+
+  //check local storage
+  var highScore = localStorage.getItem("highscore");
+  if(highScore ===null){
+    highScore = 0;
+  }
+
+  //setting new high score with players new money score
+  if(playerInfo.money > highScore){
+    localStorage.setItem("highscore", playerInfo.money);
+    localStorage.setItem("name", playerInfo.name);
+
+    window.alert(playerInfo.name + " You have the highest score now! " + highScore);
+  }else{
+    window.alert("You didn't beat the highscore from last time");
+  }
+
   //if player is still alive, player wins!
   if (playerInfo.health > 0) {
     window.alert(
